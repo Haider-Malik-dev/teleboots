@@ -1,54 +1,159 @@
+"use client";
+
 import AppLogo from "@/components/ui/AppLogo";
-import Icon from "@/components/ui/AppIcon";
 import Link from "next/link";
+import { SocialIcon } from "react-social-icons";
 
 export default function Footer() {
+  const serviceLinks = [
+    { href: "/services/virtual-assistant", label: "Virtual Assistant" },
+    { href: "/services/web-development", label: "Web Development" },
+    { href: "/services/lead-generation", label: "Lead Generation" },
+    { href: "/services/content-social", label: "Content & Social Media" },
+    { href: "/services/seo", label: "SEO & Visibility" },
+    { href: "/services/email-marketing", label: "Email Marketing" },
+  ];
+
   return (
-    <footer className="border-t border-[#E2DAD0] bg-[#FAF8F3] pt-12 pb-8 relative z-10">
+    <footer className="border-t border-[#E2DAD0] bg-[#FAF8F3] pt-14 pb-8 relative z-10">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <Link href="/homepage">
-            <AppLogo text="Teleboots" size={32} iconName="BoltIcon" className="cursor-pointer" />
-          </Link>
+        
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          
+          {/* Brand Section */}
+          <div>
+            <Link href="/">
+              <AppLogo
+                text="Teleboots"
+                size={32}
+                iconName="BoltIcon"
+                className="cursor-pointer"
+              />
+            </Link>
 
-          {/* Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#7A7168]">
-            <Link href="/homepage" className="hover:text-[#0D9E8F] transition-colors">Home</Link>
-            <Link href="/about" className="hover:text-[#0D9E8F] transition-colors">About</Link>
-            <Link href="/homepage#services" className="hover:text-[#0D9E8F] transition-colors">Services</Link>
-            <Link href="/portfolio" className="hover:text-[#0D9E8F] transition-colors">Portfolio</Link>
-            <Link href="/contact" className="hover:text-[#0D9E8F] transition-colors">Contact</Link>
-          </nav>
+            <p className="text-sm text-[#7A7168] mt-4 leading-relaxed">
+              Your remote team for admin support, web development,
+              SEO and marketing — all under one roof.
+            </p>
 
-          {/* Social + Legal */}
-          <div className="flex items-center gap-4">
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Twitter"
-              className="w-9 h-9 rounded-full border border-[#E2DAD0] flex items-center justify-center text-[#7A7168] hover:bg-[#0D9E8F] hover:text-white hover:border-[#0D9E8F] transition-all"
+              href="mailto:info@teleboots.com"
+              className="mt-4 inline-block text-sm font-semibold text-[#161412] hover:text-[#0D9E8F] transition-colors"
             >
-              <Icon name="GlobeAltIcon" size={16} />
+              info@teleboots.com
             </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="w-9 h-9 rounded-full border border-[#E2DAD0] flex items-center justify-center text-[#7A7168] hover:bg-[#0D9E8F] hover:text-white hover:border-[#0D9E8F] transition-all"
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h4 className="font-heading font-bold text-sm text-[#161412] mb-4">
+              Company
+            </h4>
+
+            <div className="flex flex-col gap-2 text-sm text-[#7A7168]">
+              <Link href="/" className="hover:text-[#0D9E8F] transition-colors">
+                Home
+              </Link>
+              <Link href="/about" className="hover:text-[#0D9E8F] transition-colors">
+                About
+              </Link>
+              <Link href="/portfolio" className="hover:text-[#0D9E8F] transition-colors">
+                Portfolio
+              </Link>
+              <Link href="/contact" className="hover:text-[#0D9E8F] transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-heading font-bold text-sm text-[#161412] mb-4">
+              Services
+            </h4>
+
+            <div className="flex flex-col gap-2 text-sm text-[#7A7168]">
+              {serviceLinks.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="hover:text-[#0D9E8F] transition-colors"
+                >
+                  {service.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Section */}
+          <div>
+            <h4 className="font-heading font-bold text-sm text-[#161412] mb-4">
+              Connect
+            </h4>
+
+            <div className="flex gap-3">
+              <SocialIcon
+                url="https://www.linkedin.com/company/teleboots/"
+                target="_blank"
+                rel="noreferrer"
+                style={{ height: 40, width: 40 }}
+                bgColor="#ffffff"
+                fgColor="#161412"
+                className="transition-transform duration-200 hover:scale-110"
+              />
+
+              <SocialIcon
+                url="https://wa.me/923125398738"
+                target="_blank"
+                rel="noreferrer"
+                style={{ height: 40, width: 40 }}
+                bgColor="#ffffff"
+                fgColor="#161412"
+                className="transition-transform duration-200 hover:scale-110"
+              />
+
+              <SocialIcon
+                url="https://www.instagram.com/teleboots.official"
+                target="_blank"
+                rel="noreferrer"
+                style={{ height: 40, width: 40 }}
+                bgColor="#ffffff"
+                fgColor="#161412"
+                className="transition-transform duration-200 hover:scale-110"
+              />
+
+              <SocialIcon
+                url="https://www.facebook.com/profile.php?id=61568449402657"
+                target="_blank"
+                rel="noreferrer"
+                style={{ height: 40, width: 40 }}
+                bgColor="#ffffff"
+                fgColor="#161412"
+                className="transition-transform duration-200 hover:scale-110"
+              />
+            </div>
+
+            <Link
+              href="/contact"
+              className="mt-5 inline-block btn-teal px-6 py-2.5 rounded-full text-sm font-semibold font-heading"
             >
-              <Icon name="BriefcaseIcon" size={16} />
-            </a>
+              Get Started
+            </Link>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-[#E2DAD0] flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#7A7168] font-mono-custom">
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-6 border-t border-[#E2DAD0] flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[#7A7168] font-mono-custom">
           <span>© 2026 Teleboots Agency. All rights reserved.</span>
+
           <div className="flex gap-4">
-            <a href="#" className="hover:text-[#0D9E8F] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#0D9E8F] transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-[#0D9E8F] transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-[#0D9E8F] transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

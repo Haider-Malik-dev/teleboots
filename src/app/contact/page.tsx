@@ -5,6 +5,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Icon from "@/components/ui/AppIcon";
+import { SocialIcon } from "react-social-icons";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,9 +29,9 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { icon: "EnvelopeIcon", label: "Email", value: "hello@teleboots.com", href: "mailto:hello@teleboots.com" },
-    { icon: "PhoneIcon", label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: "MapPinIcon", label: "Office", value: "San Francisco, CA", href: null },
+    { icon: "EnvelopeIcon", label: "Email", value: "info@teleboots.com", href: "mailto:info@teleboots.com" },
+    { icon: "PhoneIcon", label: "Phone", value: "+92 312 5398738", href: "tel:+923125398738" },
+    { icon: "MapPinIcon", label: "Office", value: " Safari, Behria town, Pakistan", href: null },
   ];
 
   return (
@@ -89,19 +90,39 @@ export default function ContactPage() {
               </div>
               <div className="pt-6">
                 <div className="text-[#7A7168] font-body text-sm mb-3">Follow Us</div>
-                <div className="flex gap-3">
-                  {["GlobeAltIcon", "BriefcaseIcon"].map((icon) => (
-                    <a
-                      key={icon}
-                      href="#"
-                      className="w-10 h-10 rounded-full border border-[#E2DAD0] flex items-center justify-center text-[#7A7168] hover:bg-[#0D9E8F] hover:text-white hover:border-[#0D9E8F] transition-all"
-                    >
-                      <Icon name={icon as Parameters<typeof Icon>[0]["name"]} size={18} />
-                    </a>
-                  ))}
+                  <div className="flex gap-3">
+                    <SocialIcon
+                      url="https://www.linkedin.com/company/teleboots/"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ height: 40, width: 40 }}
+                      bgColor="#ffffff"
+                      fgColor="#161412"
+                      className="transition-transform duration-200 hover:scale-110 hover:shadow-md"
+                    />
+
+                    <SocialIcon
+                      url="https://www.instagram.com/teleboots.official"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ height: 40, width: 40 }}
+                      bgColor="#ffffff"
+                      fgColor="#161412"
+                      className="transition-transform duration-200 hover:scale-110 hover:shadow-md"
+                    />
+
+                    <SocialIcon
+                      url="https://www.facebook.com/profile.php?id=61568449402657"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ height: 40, width: 40 }}
+                      bgColor="#ffffff"
+                      fgColor="#161412"
+                      className="transition-transform duration-200 hover:scale-110 hover:shadow-md"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
             {/* Form */}
             <div className="lg:col-span-2">

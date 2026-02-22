@@ -274,3 +274,23 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── CTA Form Inputs Fix (prevents white-on-white text) ── */
+.cta-bg input,
+.cta-bg textarea,
+.cta-bg select {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important; /* fixes Safari/iOS text color */
+  caret-color: #ffffff !important;
+}
+
+.cta-bg input::placeholder,
+.cta-bg textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.cta-bg select option {
+  background: #161412;
+  color: #ffffff;
+}

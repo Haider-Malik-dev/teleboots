@@ -15,12 +15,14 @@ export default function CTASection() {
 
   return (
     <section id="contact" className="relative z-10 overflow-hidden">
-      <div className="cta-bg py-24 relative">
+      {/* Make background ignore clicks */}
+      <div className="cta-bg py-24 relative pointer-events-none">
         {/* Ambient */}
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-[#0D9E8F]/10 rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#C9A84C]/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        {/* Re-enable clicks for content */}
+        <div className="container mx-auto px-4 max-w-6xl relative z-10 pointer-events-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left */}
             <div>
@@ -55,24 +57,17 @@ export default function CTASection() {
               {/* Contact info */}
               <div className="mt-10 flex flex-col gap-3">
                 <a
-                  href="mailto:hello@teleboots.com"
+                  href="mailto:info@teleboots.com"
                   className="flex items-center gap-3 text-white/50 hover:text-[#0D9E8F] transition-colors font-body text-sm"
                 >
                   <Icon name="EnvelopeIcon" size={16} className="text-[#0D9E8F]" />
-                  hello@teleboots.com
-                </a>
-                <a
-                  href="tel:+13125550194"
-                  className="flex items-center gap-3 text-white/50 hover:text-[#0D9E8F] transition-colors font-body text-sm"
-                >
-                  <Icon name="PhoneIcon" size={16} className="text-[#0D9E8F]" />
-                  +1 (312) 555-0194
+                  info@teleboots.com
                 </a>
               </div>
             </div>
 
             {/* Right — Form */}
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm pointer-events-auto">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
                   <div className="w-16 h-16 bg-[#CCFAF4] rounded-full flex items-center justify-center">
@@ -155,6 +150,7 @@ export default function CTASection() {
                 </form>
               )}
             </div>
+
           </div>
         </div>
       </div>
