@@ -121,7 +121,7 @@ export default function VirtualAssistantPage() {
         {
           title: "General Admin VA",
           desc: "Inbox support, documentation, daily ops organization.",
-          href: "/services/virtual-assistant/general-admin-va",
+          href: "/services/virtual-assistant/general-admin",
           icon: "ClipboardDocumentCheckIcon",
         },
         {
